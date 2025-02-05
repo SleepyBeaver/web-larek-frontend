@@ -27,13 +27,13 @@ export class Card implements ICard {
         this._priceElement = this._cardElement.querySelector('.card__price');
 
         if (actions?.onClick) {
-        this._cardElement.addEventListener('click', actions.onClick);
+            this._cardElement.addEventListener('click', actions.onClick);
         }
     }
 
     protected setElementText(element: HTMLElement, value: unknown): void {
         if (element) {
-        element.textContent = String(value);
+            element.textContent = String(value);
         }
     }
 
@@ -50,7 +50,6 @@ export class Card implements ICard {
     }
 
     render(Data: IItem): HTMLElement {
-        //console.log('Данные для рендеринга:', Data);
         this._categoryElement.textContent = Data.category;
         this.category = Data.category;
         this._titleElement.textContent = Data.title;

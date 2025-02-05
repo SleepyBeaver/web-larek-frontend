@@ -26,6 +26,6 @@ export class Data implements IData {
 
     previewProduct(product: IItem) {
       this.selectedProduct = product;
-      this.eventManager.emit('productPreview:open', product);
+      this.eventManager.emit('modalCard:open', product);
   }
 }
