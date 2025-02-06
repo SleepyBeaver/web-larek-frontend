@@ -18,7 +18,8 @@ export class ApiModel extends Api implements IApi {
     }
   
     fetchProductList(): Promise<IItem[]> {
-        //console.log(this);
+        const apiOrigin = process.env.API_ORIGIN || 'https://default-api-origin.com';
+        console.log('API Origin:', apiOrigin);
         return this.get('/product').then((data: ApiListResponse<IItem>) =>
             data.items.map((product) => ({
             ...product,
