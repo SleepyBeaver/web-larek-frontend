@@ -6,22 +6,22 @@ export interface IBasket {
     getTotalPrice: () => number;
     addProductToBasket(product: IItem): void;
     removeProductFromBasket(product: IItem): void;
-    clearCart(): void;
+    clearBasket(): void;
 }
 
 export class BasketModel implements IBasket {
-    protected _productsInCart: IItem[];
+    protected productsInCart: IItem[];
 
     constructor() {
-        this._productsInCart = [];
+        this.productsInCart = [];
     }
 
     set productsInBasket(products: IItem[]) {
-        this._productsInCart = products;
+        this.productsInCart = products;
     }
 
     get productsInBasket() {
-        return this._productsInCart;
+        return this.productsInCart;
     }
 
     getProductCount() {
@@ -33,17 +33,17 @@ export class BasketModel implements IBasket {
     }
 
     addProductToBasket(product: IItem) {
-        this._productsInCart.push(product);
+        this.productsInCart.push(product);
     }
 
     removeProductFromBasket(product: IItem) {
-        const index = this._productsInCart.indexOf(product);
+        const index = this.productsInCart.indexOf(product);
         if (index >= 0) {
-        this._productsInCart.splice(index, 1);
+        this.productsInCart.splice(index, 1);
         }
     }
 
-    clearCart() {
+    clearBasket() {
         this.productsInBasket = [];
     }
 }

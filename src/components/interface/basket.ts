@@ -14,7 +14,7 @@ export interface IBasket {
     render(): HTMLElement;
 }
   
-export class Basket implements IBasket {
+export class BasketInterface implements IBasket {
     basketElement: HTMLElement;
     titleElement: HTMLElement;
     productListElement: HTMLElement;

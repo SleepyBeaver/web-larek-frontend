@@ -7,21 +7,21 @@ export interface IData {
     previewProduct(product: IItem): void;
 }
 
-export class Data implements IData {
-    private _products: IItem[];
+export class DataModel implements IData {
+    private products: IItem[];
     selectedProduct: IItem;
 
     constructor(private eventManager: IEvents) {
-      this._products = [];
+      this.products = [];
     }
 
     set productList(products: IItem[]) {
-      this._products = products;
+      this.products = products;
       this.eventManager.emit('products:updated');
     }
 
     get productList() {
-      return this._products;
+      return this.products;
     }
 
     previewProduct(product: IItem) {

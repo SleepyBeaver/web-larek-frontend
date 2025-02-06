@@ -6,7 +6,7 @@ export interface IModal {
     render(): HTMLElement
 }
 
-export class Modal implements IModal {
+export class ModalInterface implements IModal {
     protected modalElement: HTMLElement;
     protected closeButton: HTMLButtonElement;
     protected modalContent: HTMLElement;
@@ -47,7 +47,6 @@ export class Modal implements IModal {
     }
 
     render(): HTMLElement {
-        console.log('Рендеринг модального окна');
         this.modalContent;
         this.open();
         return this.modalElement

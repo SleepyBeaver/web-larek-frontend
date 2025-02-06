@@ -27,6 +27,6 @@ export class ApiModel extends Api implements IApi {
     }
   
     submitOrder(order: IOrderBatch): Promise<IOrderConfirmation> {
-        return this.post('/orders', order).then((data: IOrderConfirmation) => data);
+        return this.post('/order', order).then((data: IOrderConfirmation) => data);
     }
 }

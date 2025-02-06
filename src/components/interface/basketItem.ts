@@ -10,7 +10,7 @@ export interface IBasketItem {
 	render(data: IItem, item: number): HTMLElement;
 }
 
-export class BasketItem implements IBasketItem {
+export class BasketItemInterface implements IBasketItem {
     basketItem: HTMLElement;
 	basketItemIndex:HTMLElement;
 	basketItemTitle: HTMLElement;
