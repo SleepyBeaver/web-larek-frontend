@@ -18,6 +18,7 @@ export class ApiModel extends Api implements IApi {
     }
   
     fetchProductList(): Promise<IItem[]> {
+        //console.log(this);
         return this.get('/product').then((data: ApiListResponse<IItem>) =>
             data.items.map((product) => ({
             ...product,
